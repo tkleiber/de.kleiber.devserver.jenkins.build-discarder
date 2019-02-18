@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage ("Build Sources") {
       steps {
-        message 'Do all the build stuff, no Build Discarder filter, so use the default here'
+        echo 'Do all the build stuff, no Build Discarder filter, so use the default here'
       }
     }
 
@@ -31,7 +31,7 @@ pipeline {
         beforeAgent true
       }
       steps {
-        message 'Do all the deployment to Quality Assurance stuff, after that set the Quality Assurance filter for the build'
+        echo 'Do all the deployment to Quality Assurance stuff, after that set the Quality Assurance filter for the build'
         // buildDiscarderFilter (filter: 'Quality Assurance')
       }
     }
@@ -52,7 +52,7 @@ pipeline {
         beforeAgent true
       }
       steps {
-        message 'Do all the deployment toProduction stuff, after that set the Production for the build filter'
+        echo 'Do all the deployment toProduction stuff, after that set the Production for the build filter'
         // buildDiscarderFilter (filter: 'Production')
       }
     }

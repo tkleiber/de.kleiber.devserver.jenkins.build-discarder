@@ -8,7 +8,7 @@ pipeline {
 
   options {
     // Default buildDiscarder configuration, Declarative Pipeline Syntax
-    buildDiscarder logRotator(artifactNumToKeepStr: '5', numToKeepStr: '5')
+    buildDiscarder logRotator(artifactNumToKeepStr: '1', numToKeepStr: '1')
     // Filter buildDiscarder detail definitions, wanted similar Declarative Pipeline Syntax
     // I think for this buildDiscarder needs more than one logRotator
     // buildDiscarder logRotator(filter: 'Production', daysToKeepStr: 'UMLIMITED')

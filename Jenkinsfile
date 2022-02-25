@@ -1,5 +1,11 @@
 pipeline {
-  agent any
+
+  agent {
+    node {
+      label 'Agent'
+    }
+  }
+
   options {
     // Default buildDiscarder configuration, Declarative Pipeline Syntax
     buildDiscarder logRotator(artifactNumToKeepStr: '5', numToKeepStr: '5')
@@ -8,7 +14,9 @@ pipeline {
     // buildDiscarder logRotator(filter: 'Production', daysToKeepStr: 'UMLIMITED')
     // buildDiscarder logRotator(filter: 'Quality Assurance', daysToKeepStr: '30')
   }
+
   stages {
+
     stage ("Build Sources") {
       steps {
         echo 'Do all the build stuff, no Build Discarder filter, so use the default here'
@@ -56,5 +64,7 @@ pipeline {
         // buildDiscarderFilter (filter: 'Production')
       }
     }
+
   }
+
 }
